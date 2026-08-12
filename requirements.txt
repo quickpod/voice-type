@@ -5,3 +5,6 @@ numpy>=1.21
 # Optional: live microphone dictation. File transcription does not need it.
 # sounddevice>=0.4
 sounddevice>=0.4
+# GUI (Aura design system on CustomTkinter; both MIT)
+customtkinter>=5.2
+darkdetect>=0.8

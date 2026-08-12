@@ -20,8 +20,10 @@ jobs:
           pyinstaller --onefile --windowed --name VoiceType
           --icon voice-type.ico
           --version-file packaging/version.txt
+          --hidden-import voicetype.__main__
           --add-data "voice-type.ico;."
           --collect-all vosk --collect-all sounddevice
+          --collect-all customtkinter
           voice_type_app.py
       - name: Stage installer inputs
         shell: pwsh
@@ -41,4 +43,10 @@ jobs:
           path: |
             dist/VoiceType.exe
             packaging/dist/VoiceType-Setup.exe
+          if-no-files-found: error
+      - name: Upload staging (for signed repack)
+        uses: actions/upload-artifact@v4
+        with:
+          name: voice-type-staging
+          path: packaging/staging
           if-no-files-found: error

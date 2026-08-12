@@ -44,6 +44,8 @@ def test_cli_parser_builds_without_vosk(monkeypatch):
     assert args.srt == "out.srt"
 
 
+@pytest.mark.skipif(sys.platform == "win32",
+                    reason="Windows CI has a real display; main() would open a window and block")
 def test_lazy_vosk_import_raises_voicetypeerror(monkeypatch):
     vt = _reimport_voicetype(monkeypatch)
     transcribe = importlib.import_module("voicetype.transcribe")
@@ -51,6 +53,8 @@ def test_lazy_vosk_import_raises_voicetypeerror(monkeypatch):
         transcribe._import_vosk()
 
 
+@pytest.mark.skipif(sys.platform == "win32",
+                    reason="Windows CI has a real display; main() would open a window and block")
 def test_lazy_sounddevice_import_raises_voicetypeerror(monkeypatch):
     vt = _reimport_voicetype(monkeypatch)
     audio = importlib.import_module("voicetype.audio")
@@ -58,6 +62,8 @@ def test_lazy_sounddevice_import_raises_voicetypeerror(monkeypatch):
         audio._import_sounddevice()
 
 
+@pytest.mark.skipif(sys.platform == "win32",
+                    reason="Windows CI has a real display; main() would open a window and block")
 def test_gui_main_headless_returns_zero():
     """gui.main() must not raise on a headless box (no $DISPLAY)."""
     from voicetype import gui
