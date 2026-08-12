@@ -1,0 +1,7 @@
+# VoiceType runtime deps — permissive/weak-copyleft only, no AGPL/proprietary.
+vosk>=0.3.45
+soundfile>=0.12
+numpy>=1.21
+# Optional: live microphone dictation. File transcription does not need it.
+# sounddevice>=0.4
+sounddevice>=0.4

@@ -1,0 +1,13 @@
+{
+  "slug": "voice-type",
+  "name": "VoiceType",
+  "tagline": "Offline speech-to-text & subtitle editor using permissive OSS models (Vosk).",
+  "categorySlug": "speech-audio-ai",
+  "license": "Apache-2.0",
+  "description": "Transcribe audio and video to text completely offline using the permissively-licensed Vosk engine \u2014 no cloud, no API keys. Generate and edit SRT/VTT subtitles with timestamps, transcribe recordings and meetings, and export plain text. Language models are downloaded on first use (Apache-2.0).",
+  "aiStack": "Python (tkinter + CLI), Vosk, soundfile",
+  "platforms": [
+    "windows"
+  ],
+  "buildEntry": "voice_type_app.py"
+}
