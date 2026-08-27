@@ -464,7 +464,7 @@ def build_app():
             self._dc_type = tk.BooleanVar(value=False)
             ctk.CTkCheckBox(
                 row3, variable=self._dc_type, font=aura.font(),
-                text="Type into the focused window (Windows only)").pack(
+                text="Type into the focused window").pack(
                 side="left")
             self._dc_start_btn = aura.AuraButton(row3, "Start",
                                                  command=self._dc_start)

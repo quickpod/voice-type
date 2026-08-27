@@ -157,7 +157,7 @@ def build_parser():
     d.add_argument("--device", type=int, default=None,
                    help="input device index (see 'models'/your OS settings)")
     d.add_argument("--type", action="store_true",
-                   help="type recognized text into the focused window (Windows)")
+                   help="type recognized text into the focused window")
     d.set_defaults(func=cmd_dictate)
 
     return p

@@ -101,7 +101,18 @@ def type_out(text):
     import sys
 
     if sys.platform != "win32":
-        return text  # no-op off Windows; caller shows/copies the text
+        # Quick OS 0.6.0: system-wide dictation (Win+H parity). X11 sessions
+        # get the text typed by xdotool; anywhere it is missing the caller
+        # still shows/copies the text exactly as before.
+        import os, shutil, subprocess
+        tool = shutil.which("xdotool")
+        if tool and os.environ.get("DISPLAY"):
+            try:
+                subprocess.run([tool, "type", "--clearmodifiers", "--delay", "8", "--", text],
+                               check=False, timeout=30)
+            except Exception:
+                pass
+        return text
 
     try:
         _send_unicode_win32(text)
