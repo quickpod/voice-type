@@ -1,6 +1,6 @@
 ; Inno Setup — VoiceType. Signed single-file installer, compiled in CI.
 #define AppName "VoiceType"
-#define AppVersion "1.0.6"
+#define AppVersion "1.0.7"
 
 [Setup]
 AppMutex=QuickOpen.VoiceType
@@ -42,7 +42,7 @@ WizardSmallImageFile=branding\wizard-small.bmp
 AppCopyright=Apache-2.0. 100%% AI-built, published on QuickOpen (quickopen.ai).
 VersionInfoCompany=QuickOpen
 VersionInfoProductName=VoiceType
-VersionInfoVersion=1.0.6.0
+VersionInfoVersion=1.0.7.0
 PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
 ArchitecturesInstallIn64BitMode=x64compatible
